@@ -1,0 +1,204 @@
+/* ==========================================================================
+   ISOLATED LOGIN ARCHITECTURE: PREMIUM GLASSMORPHISM SYSTEM
+   ========================================================================== */
+
+.chronotask-login-scope {
+    all: unset;
+    box-sizing: border-box;
+}
+
+.chronotask-login-scope * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.chronotask-login-scope .login-full-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #FAF9F6; /* Matches the new warm landing canvas background */
+    background-image: radial-gradient(#E8E5DF 1.4px, transparent 1.4px);
+    background-size: 28px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract Subtle Glowing Blobs behind card */
+.chronotask-login-scope .abstract-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.5;
+}
+.chronotask-login-scope .blob-one {
+    top: 20%;
+    left: 25%;
+    width: 250px;
+    height: 250px;
+    background: #EEF2FF;
+}
+.chronotask-login-scope .blob-two {
+    bottom: 20%;
+    right: 25%;
+    width: 300px;
+    height: 300px;
+    background: #FDF2F8;
+}
+
+/* Core Glass Container */
+.chronotask-login-scope .login-glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(239, 236, 230, 0.8);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 28px;
+    padding: 44px 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    text-align: left !important; /* Forces layout to be safe from center resets */
+}
+
+/* Header Elements */
+.chronotask-login-scope .login-brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.chronotask-login-scope .brand-badge-dot {
+    width: 44px;
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1);
+    border: 1px solid #EFECE6;
+    margin-bottom: 16px;
+}
+
+.chronotask-login-scope .core-dot {
+    width: 12px;
+    height: 12px;
+    background: #4F46E5;
+    border-radius: 50%;
+}
+
+.chronotask-login-scope .login-brand-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1A1A18;
+    letter-spacing: -0.03em;
+}
+
+.chronotask-login-scope .login-brand-header p {
+    font-size: 0.92rem;
+    color: #6B665E;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+/* Interactive Fields */
+.chronotask-login-scope .login-interactive-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.chronotask-login-scope .login-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chronotask-login-scope .login-field-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #4F4B42;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chronotask-login-scope .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chronotask-login-scope .forgot-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #4F46E5;
+    cursor: pointer;
+}
+
+.chronotask-login-scope .login-field-group input {
+    width: 100%;
+    border: 2px solid #EFECE6;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    outline: none;
+    background-color: #FAFAFA;
+    transition: all 0.2s ease;
+    color: #1A1A18;
+}
+
+.chronotask-login-scope .login-field-group input:focus {
+    border-color: #4F46E5;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.06);
+}
+
+/* Execute CTA Button */
+.chronotask-login-scope .btn-login-execute {
+    background: #1A1A18;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.chronotask-login-scope .btn-login-execute:hover {
+    background: #4F46E5;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.2);
+}
+
+/* Footer Container Switch Link */
+.chronotask-login-scope .login-card-footer {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.chronotask-login-scope .login-card-footer p {
+    font-size: 0.9rem;
+    color: #6B665E;
+    font-weight: 500;
+}
+
+.chronotask-login-scope .redirect-link {
+    color: #4F46E5;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 4px;
+}
+.chronotask-login-scope .redirect-link:hover {
+    text-decoration: underline;
+}

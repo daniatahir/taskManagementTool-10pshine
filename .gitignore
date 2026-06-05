@@ -1,0 +1,11 @@
+# Visual Studio cache and settings
+.vs/
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/

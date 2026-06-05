@@ -1,0 +1,88 @@
+2026-05-14 00:46:11.353 +05:00 [INF] User profile is available. Using 'C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-14 00:46:12.591 +05:00 [INF] Now listening on: https://localhost:7039
+2026-05-14 00:46:12.686 +05:00 [INF] Now listening on: http://localhost:5181
+2026-05-14 00:46:15.411 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-14 00:46:15.437 +05:00 [INF] Hosting environment: Development
+2026-05-14 00:46:15.438 +05:00 [INF] Content root path: C:\Users\HP\Desktop\TaskManagementAPI\TaskManagementAPI
+2026-05-14 00:46:15.481 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/index.html - null null
+2026-05-14 00:46:16.066 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/index.html - 200 null text/html;charset=utf-8 605.3059ms
+2026-05-14 00:46:16.108 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/_vs/browserLink - null null
+2026-05-14 00:46:16.153 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-14 00:46:16.204 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 50.2511ms
+2026-05-14 00:46:16.377 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/_vs/browserLink - 200 null text/javascript; charset=UTF-8 268.7695ms
+2026-05-14 00:46:16.509 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/v1/swagger.json - null null
+2026-05-14 00:46:16.543 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.0362ms
+2026-05-14 00:46:56.876 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7039/api/Auth/login - application/json 61
+2026-05-14 00:46:57.069 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-14 00:46:57.132 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TaskManagementAPI.DTOs.LoginDto) on controller TaskManagementAPI.Controllers.AuthController (TaskManagementAPI).
+2026-05-14 00:47:03.933 +05:00 [INF] Executed DbCommand (192ms) [Parameters=[@__dto_Email_0='?' (Size = 4000), @__dto_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0 AND [u].[PasswordHash] = @__dto_Password_1
+2026-05-14 00:47:04.196 +05:00 [INF] User logged in: dania2@gmail.com
+2026-05-14 00:47:04.218 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-14 00:47:04.251 +05:00 [INF] Executed action TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) in 7107.4974ms
+2026-05-14 00:47:04.254 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-14 00:47:04.292 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7039/api/Auth/login - 200 null application/json; charset=utf-8 7420.9207ms
+2026-05-14 00:47:52.076 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7039/api/Tasks - application/json 187
+2026-05-14 00:47:52.224 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.CreateTask (TaskManagementAPI)'
+2026-05-14 00:47:52.232 +05:00 [INF] Route matched with {action = "CreateTask", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateTask(TaskItem) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-14 00:47:52.611 +05:00 [INF] Executed DbCommand (59ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tasks] ([Category], [Description], [DueDate], [Priority], [Status], [Title], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-05-14 00:47:52.664 +05:00 [INF] Task created: string
+2026-05-14 00:47:52.668 +05:00 [INF] Executing OkObjectResult, writing value of type 'TaskItem'.
+2026-05-14 00:47:52.680 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.CreateTask (TaskManagementAPI) in 444.6366ms
+2026-05-14 00:47:52.689 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.CreateTask (TaskManagementAPI)'
+2026-05-14 00:47:52.692 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 615.3305ms
+2026-05-14 00:57:14.899 +05:00 [INF] User profile is available. Using 'C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-14 00:57:15.388 +05:00 [INF] Now listening on: https://localhost:7039
+2026-05-14 00:57:15.391 +05:00 [INF] Now listening on: http://localhost:5181
+2026-05-14 00:57:15.606 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-14 00:57:15.638 +05:00 [INF] Hosting environment: Development
+2026-05-14 00:57:15.639 +05:00 [INF] Content root path: C:\Users\HP\Desktop\TaskManagementAPI\TaskManagementAPI
+2026-05-14 00:57:18.127 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/index.html - null null
+2026-05-14 00:57:18.865 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/index.html - 200 null text/html;charset=utf-8 764.2389ms
+2026-05-14 00:57:18.941 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-14 00:57:18.944 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/_vs/browserLink - null null
+2026-05-14 00:57:18.971 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 30.0259ms
+2026-05-14 00:57:19.199 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/_vs/browserLink - 200 null text/javascript; charset=UTF-8 255.314ms
+2026-05-14 00:57:19.689 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/v1/swagger.json - null null
+2026-05-14 00:57:19.725 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 36.2735ms
+2026-05-14 00:58:03.439 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7039/api/Auth/login - application/json 61
+2026-05-14 00:58:03.640 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-14 00:58:03.688 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TaskManagementAPI.DTOs.LoginDto) on controller TaskManagementAPI.Controllers.AuthController (TaskManagementAPI).
+2026-05-14 00:58:09.499 +05:00 [INF] Executed DbCommand (100ms) [Parameters=[@__dto_Email_0='?' (Size = 4000), @__dto_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0 AND [u].[PasswordHash] = @__dto_Password_1
+2026-05-14 00:58:09.709 +05:00 [INF] User logged in: dania2@gmail.com
+2026-05-14 00:58:09.730 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-14 00:58:09.750 +05:00 [INF] Executed action TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) in 6051.2673ms
+2026-05-14 00:58:09.754 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-14 00:58:09.781 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7039/api/Auth/login - 200 null application/json; charset=utf-8 6342.6919ms
+2026-05-14 00:58:46.839 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks?status=pending - null null
+2026-05-14 00:58:46.991 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-14 00:58:47.004 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-14 00:58:47.185 +05:00 [INF] Executed DbCommand (82ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__status_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0 AND [t].[Status] = @__status_1
+2026-05-14 00:58:47.223 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-14 00:58:47.240 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 232.2312ms
+2026-05-14 00:58:47.243 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-14 00:58:47.249 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks?status=pending - 200 null application/json; charset=utf-8 409.646ms
+2026-05-14 00:59:01.118 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks?status=completed - null null
+2026-05-14 00:59:01.130 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-14 00:59:01.135 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-14 00:59:01.299 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__status_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0 AND [t].[Status] = @__status_1
+2026-05-14 00:59:01.306 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-14 00:59:01.310 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 168.4058ms
+2026-05-14 00:59:01.313 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-14 00:59:01.315 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks?status=completed - 200 null application/json; charset=utf-8 197.8051ms

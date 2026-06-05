@@ -1,0 +1,383 @@
+2026-05-17 02:53:05.008 +05:00 [INF] User profile is available. Using 'C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-17 02:53:09.527 +05:00 [INF] Now listening on: https://localhost:7039
+2026-05-17 02:53:09.531 +05:00 [INF] Now listening on: http://localhost:5181
+2026-05-17 02:53:09.981 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-17 02:53:10.027 +05:00 [INF] Hosting environment: Development
+2026-05-17 02:53:10.029 +05:00 [INF] Content root path: C:\Users\HP\Desktop\Task Management Tool\TaskManagementAPI\TaskManagementAPI
+2026-05-17 02:53:25.249 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger - null null
+2026-05-17 02:53:28.291 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger - 301 0 null 3093.6132ms
+2026-05-17 02:53:28.811 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/index.html - null null
+2026-05-17 02:53:29.305 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/index.html - 200 null text/html;charset=utf-8 493.5778ms
+2026-05-17 02:53:30.050 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-17 02:53:30.050 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/swagger-ui-bundle.js - null null
+2026-05-17 02:53:30.050 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/swagger-ui.css - null null
+2026-05-17 02:53:30.155 +05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-05-17 02:53:30.155 +05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-05-17 02:53:30.298 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/swagger-ui.css - 200 152034 text/css 248.1217ms
+2026-05-17 02:53:30.325 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 275.7899ms
+2026-05-17 02:53:30.324 +05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-05-17 02:53:30.343 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-17 02:53:30.345 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/_vs/browserLink - null null
+2026-05-17 02:53:30.353 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 303.3308ms
+2026-05-17 02:53:30.373 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 30.1026ms
+2026-05-17 02:53:31.955 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1610.7612ms
+2026-05-17 02:53:32.526 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/swagger/v1/swagger.json - null null
+2026-05-17 02:53:32.664 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 139.4908ms
+2026-05-17 02:59:01.928 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Auth/login - null null
+2026-05-17 02:59:01.937 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:01.942 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Auth/login - 204 null null 14.6378ms
+2026-05-17 02:59:01.946 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7039/api/Auth/login - application/json 46
+2026-05-17 02:59:01.953 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:02.168 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-17 02:59:02.225 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TaskManagementAPI.DTOs.LoginDto) on controller TaskManagementAPI.Controllers.AuthController (TaskManagementAPI).
+2026-05-17 02:59:08.934 +05:00 [INF] Executed DbCommand (87ms) [Parameters=[@__dto_Email_0='?' (Size = 4000), @__dto_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0 AND [u].[PasswordHash] = @__dto_Password_1
+2026-05-17 02:59:09.074 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Auth/login - null null
+2026-05-17 02:59:09.079 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.081 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Auth/login - 204 null null 6.6654ms
+2026-05-17 02:59:09.084 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7039/api/Auth/login - application/json 46
+2026-05-17 02:59:09.095 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.104 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-17 02:59:09.106 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TaskManagementAPI.DTOs.LoginDto) on controller TaskManagementAPI.Controllers.AuthController (TaskManagementAPI).
+2026-05-17 02:59:09.162 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__dto_Email_0='?' (Size = 4000), @__dto_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0 AND [u].[PasswordHash] = @__dto_Password_1
+2026-05-17 02:59:09.203 +05:00 [INF] User logged in: admin@gmail.com
+2026-05-17 02:59:09.203 +05:00 [INF] User logged in: admin@gmail.com
+2026-05-17 02:59:09.216 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:09.216 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:09.255 +05:00 [INF] Executed action TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) in 7013.8078ms
+2026-05-17 02:59:09.255 +05:00 [INF] Executed action TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) in 134.8403ms
+2026-05-17 02:59:09.258 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-17 02:59:09.261 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-17 02:59:09.281 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7039/api/Auth/login - 200 null application/json; charset=utf-8 7335.3078ms
+2026-05-17 02:59:09.281 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7039/api/Auth/login - 200 null application/json; charset=utf-8 197.2708ms
+2026-05-17 02:59:09.423 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:09.447 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.423 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:09.426 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:09.540 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:09.448 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 25.8893ms
+2026-05-17 02:59:09.427 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:09.460 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.574 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.596 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 170.4255ms
+2026-05-17 02:59:09.578 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.592 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.593 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 170.7795ms
+2026-05-17 02:59:09.621 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:09.646 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 218.8939ms
+2026-05-17 02:59:09.657 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.765 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:09.765 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:09.770 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 02:59:09.772 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 02:59:09.881 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 02:59:09.887 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 02:59:09.891 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+2026-05-17 02:59:09.912 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 135.0293ms
+2026-05-17 02:59:09.914 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:09.915 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:09.924 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.916 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 300.6976ms
+2026-05-17 02:59:09.928 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:09.931 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:09.955 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 02:59:09.957 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 183.9889ms
+2026-05-17 02:59:09.964 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:09.966 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 435.8401ms
+2026-05-17 02:59:09.967 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 02:59:09.977 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 02:59:09.973 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:09.981 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 20.633ms
+2026-05-17 02:59:09.988 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:09.990 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 75.6922ms
+2026-05-17 02:59:09.985 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:09.997 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:10.000 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 02:59:10.007 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+2026-05-17 02:59:10.013 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:10.016 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 11.2423ms
+2026-05-17 02:59:10.019 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:10.022 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 49.3712ms
+2026-05-17 02:59:41.666 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Auth/login - null null
+2026-05-17 02:59:41.671 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.673 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Auth/login - 204 null null 7.1147ms
+2026-05-17 02:59:41.675 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7039/api/Auth/login - application/json 52
+2026-05-17 02:59:41.687 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.689 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-17 02:59:41.690 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TaskManagementAPI.DTOs.LoginDto) on controller TaskManagementAPI.Controllers.AuthController (TaskManagementAPI).
+2026-05-17 02:59:41.705 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__dto_Email_0='?' (Size = 4000), @__dto_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0 AND [u].[PasswordHash] = @__dto_Password_1
+2026-05-17 02:59:41.716 +05:00 [INF] User logged in: dania2@gmail.com
+2026-05-17 02:59:41.717 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:41.721 +05:00 [INF] Executed action TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI) in 27.8506ms
+2026-05-17 02:59:41.723 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.AuthController.Login (TaskManagementAPI)'
+2026-05-17 02:59:41.724 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7039/api/Auth/login - 200 null application/json; charset=utf-8 49.3432ms
+2026-05-17 02:59:41.798 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:41.799 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:41.823 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.808 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:41.819 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.808 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:41.825 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 26.1229ms
+2026-05-17 02:59:41.829 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.831 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 33.0502ms
+2026-05-17 02:59:41.836 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.848 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:41.844 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 36.1759ms
+2026-05-17 02:59:41.849 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:41.850 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 42.2082ms
+2026-05-17 02:59:41.855 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.864 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.873 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:41.875 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:41.876 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 02:59:41.878 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 02:59:41.894 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 02:59:41.896 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 02:59:41.899 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 02:59:41.904 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:41.910 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 23.7516ms
+2026-05-17 02:59:41.913 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:41.915 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 65.7955ms
+2026-05-17 02:59:41.916 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 34.3795ms
+2026-05-17 02:59:41.921 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 02:59:41.923 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 02:59:41.924 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:41.939 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 90.1953ms
+2026-05-17 02:59:41.935 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.928 +05:00 [INF] CORS policy execution successful.
+2026-05-17 02:59:41.948 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:41.949 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:41.954 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 02:59:41.950 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 02:59:41.962 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 02:59:41.967 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 02:59:41.971 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 13.2303ms
+2026-05-17 02:59:41.973 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 02:59:41.974 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 02:59:41.975 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 53.7986ms
+2026-05-17 02:59:41.980 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 02:59:41.989 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 27.2964ms
+2026-05-17 02:59:41.991 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 02:59:41.993 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 70.9714ms
+2026-05-17 03:00:07.335 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks/4 - null null
+2026-05-17 03:00:07.344 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:07.347 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks/4 - 204 null null 11.9168ms
+2026-05-17 03:00:07.350 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7039/api/Tasks/4 - application/json 156
+2026-05-17 03:00:07.380 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:07.383 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.UpdateTask (TaskManagementAPI)'
+2026-05-17 03:00:07.392 +05:00 [INF] Route matched with {action = "UpdateTask", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateTask(Int32, TaskItem) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:07.467 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__id_0 AND [t].[UserId] = @__userId_1
+2026-05-17 03:00:07.678 +05:00 [INF] Executed DbCommand (34ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [DueDate] = @p0, [Status] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2026-05-17 03:00:07.697 +05:00 [INF] Executing OkObjectResult, writing value of type 'TaskItem'.
+2026-05-17 03:00:07.700 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.UpdateTask (TaskManagementAPI) in 303.76ms
+2026-05-17 03:00:07.702 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.UpdateTask (TaskManagementAPI)'
+2026-05-17 03:00:07.704 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7039/api/Tasks/4 - 200 null application/json; charset=utf-8 354.8416ms
+2026-05-17 03:00:07.710 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:07.714 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:07.716 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 5.9801ms
+2026-05-17 03:00:07.719 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:07.725 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:07.727 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:07.728 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:07.740 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:07.745 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 03:00:07.748 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 15.6695ms
+2026-05-17 03:00:07.750 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:07.752 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 33.1576ms
+2026-05-17 03:00:20.377 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:20.378 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:20.387 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:20.395 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:20.395 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:20.848 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:20.850 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 472.3052ms
+2026-05-17 03:00:20.853 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:20.856 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:20.858 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 480.0613ms
+2026-05-17 03:00:21.015 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:20.985 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 589.8644ms
+2026-05-17 03:00:20.989 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 593.605ms
+2026-05-17 03:00:21.016 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:21.040 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:21.055 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:21.057 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:21.058 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:21.060 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:21.062 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 03:00:21.075 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:21.075 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:21.080 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 03:00:21.088 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 18.6421ms
+2026-05-17 03:00:21.091 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:21.084 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 03:00:21.093 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 77.1126ms
+2026-05-17 03:00:21.095 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 29.8898ms
+2026-05-17 03:00:21.103 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:21.105 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 89.7382ms
+2026-05-17 03:00:21.106 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:21.119 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:21.120 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:21.121 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:21.125 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:21.127 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 03:00:21.129 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:21.147 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:21.164 +05:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:21.170 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 03:00:21.173 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 39.7019ms
+2026-05-17 03:00:21.177 +05:00 [INF] Executed DbCommand (22ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:21.235 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:21.240 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 03:00:21.242 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 135.715ms
+2026-05-17 03:00:21.244 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 91.3384ms
+2026-05-17 03:00:21.253 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:21.257 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 136.6883ms
+2026-05-17 03:00:31.922 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks/4 - null null
+2026-05-17 03:00:31.927 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:31.929 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks/4 - 204 null null 6.7074ms
+2026-05-17 03:00:31.931 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7039/api/Tasks/4 - application/json 154
+2026-05-17 03:00:31.940 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:31.942 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.UpdateTask (TaskManagementAPI)'
+2026-05-17 03:00:31.944 +05:00 [INF] Route matched with {action = "UpdateTask", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateTask(Int32, TaskItem) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:31.958 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__id_0 AND [t].[UserId] = @__userId_1
+2026-05-17 03:00:31.973 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [Status] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-05-17 03:00:31.978 +05:00 [INF] Executing OkObjectResult, writing value of type 'TaskItem'.
+2026-05-17 03:00:31.980 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.UpdateTask (TaskManagementAPI) in 32.9553ms
+2026-05-17 03:00:31.982 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.UpdateTask (TaskManagementAPI)'
+2026-05-17 03:00:31.986 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7039/api/Tasks/4 - 200 null application/json; charset=utf-8 54.9133ms
+2026-05-17 03:00:31.992 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:31.996 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:31.997 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 5.5133ms
+2026-05-17 03:00:32.000 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:32.009 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:32.011 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:32.012 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:32.024 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:32.029 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 03:00:32.032 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 16.3598ms
+2026-05-17 03:00:32.034 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:32.037 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 37.4118ms
+2026-05-17 03:00:38.098 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:38.100 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:38.100 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:38.113 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:38.171 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.176 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.181 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.185 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.187 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 88.8867ms
+2026-05-17 03:00:38.189 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Dashboard - 204 null null 88.7931ms
+2026-05-17 03:00:38.190 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 90.3299ms
+2026-05-17 03:00:38.191 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7039/api/Tasks - 204 null null 79.1564ms
+2026-05-17 03:00:38.204 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:38.196 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:38.229 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.235 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.237 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:38.239 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:38.240 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:38.242 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 03:00:38.258 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:38.259 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:38.265 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 03:00:38.270 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 03:00:38.273 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 22.0079ms
+2026-05-17 03:00:38.277 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 30.5736ms
+2026-05-17 03:00:38.278 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Dashboard - null null
+2026-05-17 03:00:38.281 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7039/api/Tasks - null null
+2026-05-17 03:00:38.281 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:38.284 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:38.315 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.319 +05:00 [INF] CORS policy execution successful.
+2026-05-17 03:00:38.321 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 125.2183ms
+2026-05-17 03:00:38.323 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 119.3308ms
+2026-05-17 03:00:38.325 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:38.326 +05:00 [INF] Executing endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:38.345 +05:00 [INF] Route matched with {action = "GetDashboard", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetDashboard() on controller TaskManagementAPI.Controllers.DashboardController (TaskManagementAPI).
+2026-05-17 03:00:38.349 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Tasks"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTasks(System.String, System.String, System.String) on controller TaskManagementAPI.Controllers.TasksController (TaskManagementAPI).
+2026-05-17 03:00:38.365 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:38.367 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Category], [t].[Description], [t].[DueDate], [t].[Priority], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Tasks] AS [t]
+WHERE [t].[UserId] = @__userId_0
+2026-05-17 03:00:38.369 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 03:00:38.375 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TaskItem, TaskManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-17 03:00:38.378 +05:00 [INF] Executed action TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI) in 26.078ms
+2026-05-17 03:00:38.381 +05:00 [INF] Executed action TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI) in 25.4014ms
+2026-05-17 03:00:38.387 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.TasksController.GetTasks (TaskManagementAPI)'
+2026-05-17 03:00:38.384 +05:00 [INF] Executed endpoint 'TaskManagementAPI.Controllers.DashboardController.GetDashboard (TaskManagementAPI)'
+2026-05-17 03:00:38.389 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Tasks - 200 null application/json; charset=utf-8 109.3293ms
+2026-05-17 03:00:38.392 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7039/api/Dashboard - 200 null application/json; charset=utf-8 114.752ms

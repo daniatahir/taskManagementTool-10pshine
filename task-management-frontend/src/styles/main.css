@@ -1,0 +1,662 @@
+/* ==========================================================================
+   MASTER DESIGN SYSTEM: WARM-LUXE ARCHITECTURE FOR DASHBOARD.JS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- 1. GLOBAL VARIABLES & SYSTEM RESET --- */
+:root {
+    --bg-canvas: #FBF9F6;          /* Premium Warm Alabaster */
+    --bg-card: #FFFFFF;            /* Pure White Matte */
+    --charcoal-dark: #1E1E1C;      /* Deep Earth Charcoal Sidebar */
+    --charcoal-medium: #2C2C2A;    /* Primary Slate Headers/Buttons */
+    --text-muted: #8C867A;         /* Soft Sand Earth Shadow Text */
+    --border-color: #EFEAE2;       /* Minimalist Warm Outline */
+    
+    /* Elegant Pastel Status Colors */
+    --bg-success: #EFF6F4;   --txt-success: #6E8E82; /* Eucalyptus */
+    --bg-warning: #FDF8ED;   --txt-warning: #C49A45; /* Warm Amber */
+    --bg-danger: #FDF3F2;    --txt-danger: #D97466;  /* Soft Terracotta */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-canvas);
+    color: var(--charcoal-medium);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. CORE FLEXBOX STRUCTURE (ANTI-STACK MATRIX)
+   ========================================================================== */
+
+.app-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-wrapper {
+    flex: 1 !important;
+    padding: 40px !important;
+    background-color: var(--bg-canvas);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px;
+    overflow-y: auto;
+}
+
+/* ==========================================================================
+   3. PITCH SIDEBAR NAVIGATION COMPONENT
+   ========================================================================== */
+
+.pitch-sidebar {
+    width: 280px !important;
+    min-width: 280px !important;
+    background: var(--charcoal-dark) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 36px 20px !important;
+    min-height: 100vh;
+}
+
+/* Brand Branding Section */
+.pitch-sidebar .brand-section {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px;
+    text-decoration: none !important;
+    margin-bottom: 36px;
+    padding-left: 10px;
+}
+
+.pitch-sidebar .brand-logo {
+    width: 36px;
+    height: 36px;
+    background: #FFFFFF;
+    color: var(--charcoal-dark);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.pitch-sidebar .brand-section span {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #FBF9F6;
+    letter-spacing: -0.03em;
+}
+
+/* Create New Task Call-To-Action Button */
+.btn-create-task {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 14px 18px !important;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: pointer;
+    margin-bottom: 36px;
+    transition: all 0.2s ease;
+}
+
+.btn-create-task:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.plus-icon-box {
+    background: rgba(255, 255, 255, 0.1);
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav Menu & Items Cleanup (Forcing list-style cleanup from your screenshot) */
+.nav-menu {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100%;
+}
+
+.nav-menu-item {
+    list-style: none !important;
+    margin-bottom: 8px;
+}
+
+.nav-menu-item a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 14px 18px !important;
+    color: var(--text-muted) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+}
+
+.nav-menu-item a:hover {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: #FFFFFF !important;
+}
+
+.nav-menu-item.active a {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #FFFFFF !important;
+}
+
+/* Logout Item positioned gracefully at the bottom */
+.logout-item {
+    margin-top: auto !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+}
+
+.me-2-custom {
+    margin-right: 12px !important;
+}
+
+/* ==========================================================================
+   4. TOP DASHBOARD HEADER PANELS
+   ========================================================================== */
+
+.header-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.header-title h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.live-clock {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px;
+}
+
+.action-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.relative-badge { position: relative; }
+
+.notification-dot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #E26565;
+    border-radius: 50%;
+    border: 2px solid var(--bg-card);
+}
+
+/* Profile Pill Layout */
+.profile-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    padding: 6px 16px 6px 6px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--charcoal-medium);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal-medium);
+}
+
+/* ==========================================================================
+   5. PREMIUM GREETING BANNER DESIGN
+   ========================================================================== */
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--charcoal-medium) 0%, #1A1A19 100%) !important;
+    border-radius: 28px !important;
+    padding: 40px 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100%;
+    box-shadow: 0 16px 40px rgba(44, 44, 42, 0.06);
+}
+
+.welcome-text h1 {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: #F9F6F0 !important;
+    letter-spacing: -0.02em;
+}
+
+.welcome-text p {
+    color: #C5C1B7 !important;
+    margin-top: 6px;
+    font-size: 1.02rem;
+}
+
+.banner-illustration-modern {
+    position: relative;
+}
+
+.floating-icon-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--charcoal-medium);
+    margin-bottom: -16px;
+}
+
+/* ==========================================================================
+   6. DYNAMIC OVERVIEW COUNTERS SYSTEM
+   ========================================================================== */
+
+.metrics-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+    width: 100% !important;
+}
+
+.metric-premium-card {
+    flex: 1 !important;
+    min-width: 250px !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 24px !important;
+    padding: 28px !important;
+    box-shadow: 0 12px 30px rgba(226, 218, 204, 0.2);
+}
+
+.metric-premium-card h5 {
+    font-size: 0.85rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.metric-premium-card h1 {
+    font-size: 2.8rem !important;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--charcoal-medium);
+}
+
+/* Custom left highlight bounds for the metric frames */
+.card-amber { border-left: 5px solid var(--txt-warning) !important; }
+.card-indigo { border-left: 5px solid #5A73A3 !important; }
+.card-rose { border-left: 5px solid var(--txt-success) !important; }
+
+/* ==========================================================================
+   7. CONTROL ROWS MANAGEMENT (SEARCH BAR + FILTER BUTTON PILLS)
+   ========================================================================== */
+
+.dashboard-controls-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+}
+
+.search-inside-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.premium-search-input {
+    width: 100% !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    padding: 14px 20px 14px 48px !important;
+    font-size: 0.95rem !important;
+    outline: none !important;
+    background-color: var(--bg-card);
+    transition: border 0.2s ease;
+}
+
+.premium-search-input:focus {
+    border-color: var(--text-muted) !important;
+}
+
+.filter-pills-group {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+}
+
+.filter-pill-btn {
+    background: transparent !important;
+    border: 1px solid #E6DFD5 !important;
+    color: #6E685E !important;
+    font-weight: 600 !important;
+    padding: 10px 22px !important;
+    border-radius: 14px !important;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.filter-pill-btn:hover {
+    background: #F7F4EE !important;
+}
+
+.filter-pill-btn.active {
+    background: var(--charcoal-medium) !important;
+    color: #FFFFFF !important;
+    border-color: var(--charcoal-medium) !important;
+    box-shadow: 0 8px 20px rgba(44, 44, 42, 0.15);
+}
+
+/* ==========================================================================
+   8. SECURE DATA WORKSPACE GRID MATRIX (TABLE LAYOUTS)
+   ========================================================================== */
+
+.table-responsive-wrapper {
+    background: var(--bg-card) !important;
+    border-radius: 26px !important;
+    border: 1px solid var(--border-color) !important;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.premium-data-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+.premium-data-table th {
+    background-color: #F7F4EE !important;
+    color: #5C574F !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.08em;
+    padding: 20px 24px !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    text-align: left;
+}
+
+.premium-data-table td {
+    padding: 22px 24px !important;
+    border-bottom: 1px solid #F7F4EE !important;
+    font-size: 0.94rem !important;
+    vertical-align: middle !important;
+}
+
+/* Custom Table Meta Blocks Row */
+.table-task-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px;
+}
+
+.table-task-icon {
+    width: 38px;
+    height: 38px;
+    background: #F0F6FF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-task-title {
+    font-weight: 600;
+    color: var(--charcoal-medium);
+}
+
+.table-task-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.premium-category-tag {
+    background: #F4F4F2;
+    color: #5A5A57;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+.d-flex-align {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.premium-table-select {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    background-color: #FAFCFF;
+}
+
+/* Status Badges Dynamic Colors Mapping from Jsx Methods */
+.status-badge {
+    font-weight: 700;
+    padding: 6px 14px !important;
+    border-radius: 10px !important;
+    font-size: 0.8rem;
+    display: inline-block !important;
+}
+
+.badge-pastel-danger { background: var(--bg-danger) !important; color: var(--txt-danger) !important; }
+.badge-pastel-warning { background: var(--bg-warning) !important; color: var(--txt-warning) !important; }
+.badge-pastel-success { background: var(--bg-success) !important; color: var(--txt-success) !important; }
+
+/* Control Action Triggers row cells config */
+.table-actions-cell {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 8px;
+}
+
+.premium-action-icon-btn {
+    border: none !important;
+    border-radius: 10px !important;
+    width: 36px;
+    height: 36px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.edit-btn { background: #F7F4EE !important; color: #5C574F !important; }
+.delete-btn { background: #FDF3F2 !important; color: #D97466 !important; }
+
+.premium-action-icon-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   9. BOOTSTRAP PREMIUM MODALS FORMS RE-ENGINEERING
+   ========================================================================== */
+
+.premium-modal-content {
+    border: none !important;
+    border-radius: 28px !important;
+    padding: 10px;
+    box-shadow: 0 30px 65px rgba(44, 44, 42, 0.2) !important;
+}
+
+.premium-modal-header {
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 20px 24px !important;
+}
+
+.premium-modal-header h5 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--charcoal-medium);
+}
+
+.premium-modal-body {
+    padding: 24px !important;
+}
+
+.premium-modal-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.premium-modal-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #5C574F;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.premium-form-input {
+    width: 100%;
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    outline: none;
+    background-color: #FAFCFF;
+    transition: all 0.2s ease;
+}
+
+.premium-form-input:focus {
+    border-color: var(--text-muted);
+    background-color: #FFFFFF;
+}
+
+textarea.premium-form-input {
+    min-height: 100px;
+}
+
+.btn-premium-action-submit {
+    background: linear-gradient(135deg, var(--charcoal-medium) 0%, #1A1A19 100%) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 15px 24px !important;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(44, 44, 42, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.btn-premium-action-submit:hover {
+    transform: translateY(-2px);
+}
+
+.btn-premium-action-submit.btn-success {
+    background: linear-gradient(135deg, var(--txt-success) 0%, #556F65 100%) !important;
+}
+
+/* ==========================================================================
+   10. RESPONSIVE BREAKPOINTS ENGINE
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .app-layout {
+        flex-direction: column !important;
+    }
+    .pitch-sidebar {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 24px !important;
+    }
+    .main-wrapper {
+        padding: 24px !important;
+    }
+    .metrics-grid {
+        flex-direction: column !important;
+    }
+}
