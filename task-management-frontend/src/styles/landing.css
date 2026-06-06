@@ -1,4 +1,5 @@
 /* ==========================================================================
+<<<<<<< HEAD
    CINEMATIC FADE-IN & STAGGERED ANIMATION ENGINE
    ========================================================================== */
 
@@ -13,20 +14,184 @@
     opacity: 0;
     animation: scaleUpReveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     animation-delay: 0.3s; /* Sabse pehle core badge clear hoga */
+=======
+   CHRONOTASK/AURATASK COMPLETE INTEGRATED LANDING CSS ENGINE
+   (LAYOUT + TIMED SMOOTH ANIMATIONS)
+   ========================================================================== */
+
+.chronotask-landing-scope {
+    all: unset;
+    box-sizing: border-box;
+}
+
+.chronotask-landing-scope * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.chronotask-landing-scope .landing-canvas {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #FAF9F6;
+    background-image: radial-gradient(#E8E5DF 1.4px, transparent 1.4px);
+    background-size: 28px 28px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- CORE ROW HEADER --- */
+.chronotask-landing-scope .landing-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 24px 64px !important;
+    width: 100% !important;
+    background: transparent !important;
+    opacity: 0;
+    animation: simpleFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.1s;
+}
+
+.chronotask-landing-scope .landing-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.chronotask-landing-scope .brand-dot-matrix {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
+    width: 18px !important;
+}
+
+.chronotask-landing-scope .brand-dot-matrix .dot {
+    width: 6px !important;
+    height: 6px !important;
+    background-color: #A0AEC0 !important;
+    border-radius: 50% !important;
+}
+
+.chronotask-landing-scope .brand-dot-matrix .dot.active-indigo {
+    background-color: #4F46E5 !important;
+}
+
+.chronotask-landing-scope .brand-text {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: #1A1A18 !important;
+    letter-spacing: -0.03em !important;
+}
+
+.chronotask-landing-scope .landing-nav {
+    display: flex !important;
+    gap: 32px !important;
+}
+
+.chronotask-landing-scope .landing-nav a {
+    text-decoration: none !important;
+    color: #6B665E !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: color 0.2s ease !important;
+}
+.chronotask-landing-scope .landing-nav a:hover { color: #4F46E5 !important; }
+
+.chronotask-landing-scope .btn-text-auth {
+    background: transparent !important;
+    border: 1px solid #1A1A18 !important;
+    color: #1A1A18 !important;
+    padding: 10px 24px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    font-size: 0.92rem !important;
+    transition: all 0.2s ease !important;
+}
+.chronotask-landing-scope .btn-text-auth:hover {
+    background: #1A1A18 !important;
+    color: #FFFFFF !important;
+}
+
+/* --- THE HERO CANVAS ARCHITECTURE --- */
+.chronotask-landing-section,
+.chronotask-landing-scope .landing-hero-section {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 20px 40px 100px 40px !important;
+    position: relative !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+.chronotask-landing-scope .central-emblem-wrapper.glass-lux {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    width: 68px !important;
+    height: 68px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 15px 35px rgba(79, 70, 229, 0.12) !important;
+    margin-bottom: 32px !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    opacity: 0;
+    animation: scaleUpReveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 0.3s;
+>>>>>>> 4f11353 (Complete Project Pushed)
 }
 
 .chronotask-landing-scope .hero-main-title {
+<<<<<<< HEAD
     opacity: 0;
     animation: premiumSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: 0.45s;
 }
 
 .chronotask-landing-scope .hero-sub-text {
+=======
+    font-size: 4.5rem !important;
+    font-weight: 800 !important;
+    color: #1A1A18 !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.15 !important;
+    opacity: 0;
+    animation: premiumSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.45s;
+}
+
+.chronotask-landing-scope .text-gradient-accent {
+    background: linear-gradient(135deg, #4F46E5 0%, #D946EF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    position: relative;
+    display: inline-block;
+}
+
+.chronotask-landing-scope .hero-sub-text {
+    font-size: 1.25rem !important;
+    color: #6B665E !important;
+    margin-top: 24px !important;
+    font-weight: 500 !important;
+    max-width: 540px !important;
+    line-height: 1.5 !important;
+>>>>>>> 4f11353 (Complete Project Pushed)
     opacity: 0;
     animation: premiumSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: 0.6s;
 }
 
+<<<<<<< HEAD
 /* --- 2. STAGGERED CARDS ENTRY (WITH INITIAL FADE & ROTATION ESCAPE) --- */
 
 /* Top-Left: Yellow Sticky Note + Checkbox Badge */
@@ -34,14 +199,73 @@
     opacity: 0;
     --base-rotation: -3deg;
     /* Pehle smooth fade entry hogi, phir 1.5s ke baad hawa mein float lagatar chalta rahega */
+=======
+/* ==========================================================================
+   PRECISE POSITIONING & DESIGN OF FLOATING ASSETS
+   ========================================================================== */
+.chronotask-landing-scope .float-card {
+    position: absolute !important;
+    z-index: 2 !important;
+}
+
+/* --- TOP LEFT ASSET BLOCK --- */
+.chronotask-landing-scope .top-left-sticky {
+    top: 10% !important;
+    left: 2% !important;
+    opacity: 0;
+    --base-rotation: -3deg;
+>>>>>>> 4f11353 (Complete Project Pushed)
     animation: 
         premiumSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both,
         gentleFloatY 6s ease-in-out infinite alternate;
     animation-delay: 0.8s, 2s; 
 }
+<<<<<<< HEAD
 
 /* Top-Right: Premium Agenda Widget + Stopwatch */
 .chronotask-landing-scope .top-right-reminders {
+=======
+.chronotask-landing-scope .warm-sticky-note.asymmetric-curve {
+    background: #FFF9D4 !important;
+    padding: 22px !important;
+    width: 230px !important;
+    border-radius: 24px 4px 24px 24px !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05) !important;
+    position: relative !important;
+}
+.chronotask-landing-scope .warm-sticky-note .pin-dot {
+    width: 8px !important;
+    height: 8px !important;
+    background: #E53E3E !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+.chronotask-landing-scope .warm-sticky-note p { font-size: 0.88rem !important; color: #2D3748 !important; font-weight: 600 !important; line-height: 1.4 !important; text-align: left !important; }
+
+.chronotask-landing-scope .floating-check-box.neon-shadow {
+    background: #FFFFFF !important;
+    border-radius: 14px !important;
+    width: 54px !important;
+    height: 54px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.15) !important;
+    transform: translate(50px, -15px) rotate(6deg) !important;
+}
+.chronotask-landing-scope .check-icon-bg.dark-accent { width: 32px !important; height: 32px !important; background: #1A1A18 !important; border-radius: 8px !important; color: white !important; display: flex !important; align-items: center !important; justify-content: center !important; font-weight: bold !important; }
+
+
+/* --- TOP RIGHT ASSET BLOCK --- */
+.chronotask-landing-scope .top-right-reminders {
+    top: 8% !important;
+    right: 2% !important;
+    display: flex !important;
+    gap: 16px !important;
+>>>>>>> 4f11353 (Complete Project Pushed)
     opacity: 0;
     --base-rotation: 3deg;
     animation: 
@@ -49,18 +273,71 @@
         gentleFloatY 7s ease-in-out infinite alternate-reverse;
     animation-delay: 0.95s, 2.15s;
 }
+<<<<<<< HEAD
 
 /* Bottom-Left: Sprint Progress Grid Box */
 .chronotask-landing-scope .bottom-left-tasks {
+=======
+.chronotask-landing-scope .reminder-widget.premium-glass {
+    background: #FFFFFF !important;
+    border-radius: 24px !important;
+    padding: 20px !important;
+    width: 240px !important;
+    border: 1px solid #EFECE6 !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06) !important;
+}
+.chronotask-landing-scope .reminder-widget h6 { font-size: 0.85rem !important; color: #718096 !important; margin-bottom: 12px !important; font-weight: 700 !important; text-align: left !important;}
+.chronotask-landing-scope .meeting-alert.variant-gold { background: #FCFBF7 !important; padding: 12px !important; border-radius: 14px !important; border-left: 3px solid #D97706 !important; text-align: left !important;}
+.chronotask-landing-scope .meeting-alert .alert-lbl { font-size: 0.68rem !important; color: #A0AEC0 !important; text-transform: uppercase !important; font-weight: 700 !important; }
+.chronotask-landing-scope .meeting-alert .meet-title { font-size: 0.85rem !important; font-weight: 700 !important; color: #1A202C !important; margin-top: 2px !important; }
+.chronotask-landing-scope .meeting-alert .meet-desc { font-size: 0.75rem !important; color: #718096 !important; display: block !important; }
+.chronotask-landing-scope .meeting-alert .time-badge { font-size: 0.72rem !important; color: #D97706 !important; background: #FEF3C7 !important; padding: 4px 8px !important; border-radius: 6px !important; display: inline-block !important; margin-top: 8px !important; font-weight: 600 !important; }
+.chronotask-landing-scope .floating-stopwatch.custom-glow { background: #1A1A18 !important; border-radius: 16px !important; width: 54px !important; height: 54px !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 1.4rem !important; box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important; transform: translateY(30px) rotate(-6deg) !important;}
+
+
+/* --- BOTTOM LEFT ASSET BLOCK --- */
+.chronotask-landing-scope .bottom-left-tasks {
+    bottom: 8% !important;
+    left: 2% !important;
+>>>>>>> 4f11353 (Complete Project Pushed)
     opacity: 0;
     animation: 
         premiumSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both,
         gentleFloatX 7.5s ease-in-out infinite alternate;
     animation-delay: 1.1s, 2.3s;
 }
+<<<<<<< HEAD
 
 /* Bottom-Right: App Connected Integrations Matrix */
 .chronotask-landing-scope .bottom-right-integrations {
+=======
+.chronotask-landing-scope .tasks-widget.elegant-border {
+    background: #FFFFFF !important;
+    border-radius: 24px !important;
+    padding: 24px !important;
+    width: 280px !important;
+    border: 1px solid #EFECE6 !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.06) !important;
+}
+.chronotask-landing-scope .tasks-widget h6 { font-size: 0.88rem !important; color: #4A5568 !important; font-weight: 700 !important; margin-bottom: 16px !important; text-align: left !important;}
+.chronotask-landing-scope .task-track-row { margin-bottom: 16px !important; }
+.chronotask-landing-scope .task-info { display: flex !important; align-items: center !important; gap: 10px !important; margin-bottom: 8px !important; }
+.chronotask-landing-scope .bullet-num { width: 20px !important; height: 20px !important; border-radius: 6px !important; font-size: 0.75rem !important; font-weight: 700 !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+.chronotask-landing-scope .bullet-num.royal-blue { background: #EEF2FF !important; color: #4F46E5 !important; }
+.chronotask-landing-scope .bullet-num.bright-pink { background: #FDF2F8 !important; color: #DB2777 !important; }
+.chronotask-landing-scope .task-info p { font-size: 0.85rem !important; font-weight: 600 !important; color: #2D3748 !important; }
+.chronotask-landing-scope .progress-bar-container { display: flex !important; align-items: center !important; gap: 12px !important; }
+.chronotask-landing-scope .progress-bar-container .bar-fill { height: 6px !important; border-radius: 10px !important; flex: 1 !important; background: #EDF2F7 !important; }
+.chronotask-landing-scope .bar-fill.indigo-fill { background: #4F46E5 !important; width: 75%; }
+.chronotask-landing-scope .bar-fill.gradient-rose-fill { background: linear-gradient(90deg, #EC4899, #F43F5E) !important; width: 100%; }
+.chronotask-landing-scope .progress-bar-container .perc { font-size: 0.78rem !important; font-weight: 700 !important; color: #718096 !important; }
+
+
+/* --- BOTTOM RIGHT ASSET BLOCK --- */
+.chronotask-landing-scope .bottom-right-integrations {
+    bottom: 6% !important;
+    right: 2% !important;
+>>>>>>> 4f11353 (Complete Project Pushed)
     opacity: 0;
     --base-rotation: -2deg;
     animation: 
@@ -68,6 +345,7 @@
         gentleFloatY 5.8s ease-in-out infinite alternate;
     animation-delay: 1.25s, 2.45s;
 }
+<<<<<<< HEAD
 
 
 /* ==========================================================================
@@ -75,12 +353,33 @@
    ========================================================================== */
 
 /* Header / Navbar Default Fade */
+=======
+.chronotask-landing-scope .integrations-widget {
+    background: #FFFFFF !important;
+    border-radius: 24px !important;
+    padding: 24px !important;
+    width: 250px !important;
+    border: 1px solid #EFECE6 !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.06) !important;
+}
+.chronotask-landing-scope .integrations-widget h6 { font-size: 0.88rem !important; color: #4A5568 !important; font-weight: 700 !important; margin-bottom: 16px !important; text-align: left !important;}
+.chronotask-landing-scope .brand-icons-row { display: flex !important; gap: 12px !important; }
+.chronotask-landing-scope .app-icon-box.box-shadow-soft { width: 46px !important; height: 46px !important; border-radius: 12px !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 1.3rem !important; background: #FFFFFF !important; border: 1px solid #F0F4F8 !important; box-shadow: 0 8px 20px rgba(0,0,0,0.04) !important; }
+
+
+/* ==========================================================================
+   DYNAMIC REVEAL KEYFRAMES ENGINE
+   ========================================================================== */
+>>>>>>> 4f11353 (Complete Project Pushed)
 @keyframes simpleFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+<<<<<<< HEAD
 /* Premium Reveal Physics: Fades in while scaling up out of nothingness */
+=======
+>>>>>>> 4f11353 (Complete Project Pushed)
 @keyframes scaleUpReveal {
     from {
         opacity: 0;
@@ -92,7 +391,10 @@
     }
 }
 
+<<<<<<< HEAD
 /* Luxury Slide Up: Smooth opacity translation that respects predefined rotation angles */
+=======
+>>>>>>> 4f11353 (Complete Project Pushed)
 @keyframes premiumSlideUp {
     from {
         opacity: 0;
@@ -104,7 +406,10 @@
     }
 }
 
+<<<<<<< HEAD
 /* Endless Dynamic Fluid Y-Float Engine */
+=======
+>>>>>>> 4f11353 (Complete Project Pushed)
 @keyframes gentleFloatY {
     0% {
         transform: translateY(0px) rotate(var(--base-rotation, 0deg));
@@ -114,7 +419,10 @@
     }
 }
 
+<<<<<<< HEAD
 /* Endless Dynamic Fluid X-Float Engine (Adds structural variance) */
+=======
+>>>>>>> 4f11353 (Complete Project Pushed)
 @keyframes gentleFloatX {
     0% {
         transform: translateX(0px) translateY(0px);
@@ -122,4 +430,15 @@
     100% {
         transform: translateX(12px) translateY(-6px);
     }
+<<<<<<< HEAD
+=======
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1150px) {
+    .chronotask-landing-scope .float-card { display: none !important; }
+    .chronotask-landing-scope .hero-main-title { font-size: 2.8rem !important; }
+    .chronotask-landing-scope .landing-header { padding: 20px !important; }
+    .chronotask-landing-scope .landing-nav { display: none !important; }
+>>>>>>> 4f11353 (Complete Project Pushed)
 }

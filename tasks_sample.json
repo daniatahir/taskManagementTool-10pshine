@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Design System Architecture",
+    "description": "Create the wireframes, design tokens, and global components in Figma.",
+    "status": "In Progress",
+    "priority": "High",
+    "category": "Design",
+    "dueDate": "2026-06-15T00:00:00Z"
+  },
+  {
+    "title": "Setup JWT Authentication Pipeline",
+    "description": "Secure the endpoints using Bearer middleware tokens and role validations.",
+    "status": "Pending",
+    "priority": "High",
+    "category": "Backend",
+    "dueDate": "2026-06-20T00:00:00Z"
+  },
+  {
+    "title": "Refactor Dashboard CSS Grid",
+    "description": "Fix alignment issues on metrics charts and adjust responsive media queries.",
+    "status": "Completed",
+    "priority": "Medium",
+    "category": "Frontend",
+    "dueDate": "2026-06-05T00:00:00Z"
+  },
+  {
+    "title": "Write API Integration Docs",
+    "description": "Document Swagger endpoints and collection structures for teammates.",
+    "status": "Pending",
+    "priority": "Low",
+    "category": "Documentation",
+    "dueDate": "2026-06-25T00:00:00Z"
+  }
+]

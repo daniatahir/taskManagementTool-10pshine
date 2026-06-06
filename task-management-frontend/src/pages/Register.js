@@ -42,7 +42,7 @@ const Register = () => {
               <span className="core-dot"></span>
             </div>
             <h2>Create Account</h2>
-            <p>Join ChronoTask to structure your daily work velocity</p>
+            <p>Join AuraTask to structure your daily work velocity</p>
           </div>
 
           {/* Core Interactive Form */}

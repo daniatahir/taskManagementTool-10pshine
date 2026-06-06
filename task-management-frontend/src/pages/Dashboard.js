@@ -115,6 +115,7 @@ function Dashboard() {
         headers: { Authorization: `Bearer ${token}` },
       });
       getTasks();
+      getDashboard(); // Sync counters after deletion
       toast.success("Task Deleted Successfully");
     } catch (error) {
       console.log(error);
@@ -134,6 +135,65 @@ function Dashboard() {
       console.log(error);
       toast.error("Failed to assign task");
     }
+  };
+
+  // Feature: Client Side Export Function (JSON Stream Download)
+  const exportTasksToJSON = () => {
+    if (tasks.length === 0) {
+      toast.error("No active matrix data available to export.");
+      return;
+    }
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tasks, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "AuraTask_Export.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    toast.success("Workspace matrix exported successfully! 📄");
+  };
+
+  // Feature: Bulk Import Processing & API Storage sync
+  const handleImportJSON = (e) => {
+    const fileReader = new FileReader();
+    const file = e.target.files[0];
+    if (!file) return;
+
+    fileReader.readAsText(file, "UTF-8");
+    fileReader.onload = async (event) => {
+      try {
+        const importedTasks = JSON.parse(event.target.result);
+        const token = localStorage.getItem("token");
+        if (!Array.isArray(importedTasks)) {
+          toast.error("Invalid structural format template.");
+          return;
+        }
+
+        // Loop through the tasks and send them to the backend API
+        for (const task of importedTasks) {
+          await axios.post(
+            "https://localhost:7039/api/Tasks",
+            {
+              title: task.title || task.Title,
+              description: task.description || task.Description,
+              status: task.status || task.Status || "Pending",
+              priority: task.priority || task.Priority || "Medium",
+              category: task.category || task.Category || "General",
+              dueDate: task.dueDate || task.DueDate
+            },
+            { headers: { Authorization: `Bearer ${token}` } }
+          );
+        }
+        toast.success("All records imported and synced successfully! 🎉");
+        getTasks();
+        getDashboard();
+      } catch (error) {
+        console.error(error);
+        toast.error("Invalid file compilation configuration structure.");
+      }
+    };
+    // Reset file input so the same file can be chosen again if needed
+    e.target.value = "";
   };
 
   const getStatusBadgeClass = (status) => {
@@ -187,7 +247,6 @@ function Dashboard() {
         <header className="header-bar">
           <div className="header-title">
             <h2>Dashboard</h2>
-            {/* Live Ticking Dynamic Date Tracker */}
             <p className="live-clock">{currentTime || "Loading live time..."}</p>
           </div>
           <div className="header-actions">
@@ -200,30 +259,67 @@ function Dashboard() {
             </span>
             <div className="profile-pill">
               <div className="profile-avatar">
-                {userName ? userName.split(" ").map((w) => w[0]).join("").toUpperCase() : ""}
+                {userName ? userName.split(" ").map((w) => w[0]).join("").toUpperCase() : "A"}
               </div>
-              <span className="profile-name">{userName}</span>
+              <span className="profile-name">{userName || "Admin"}</span>
             </div>
+            <button 
+              type="button" 
+              className="premium-top-logout-btn"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.href = "/";
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: '#FEF2F2',
+                color: '#EF4444',
+                border: '1px solid #FEE2E2',
+                padding: '6px 12px',
+                borderRadius: '8px',
+                fontSize: '13px',
+                fontWeight: '500',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                marginLeft: '10px'
+              }}
+            >
+              <LogOut size={15} />
+              <span>Logout</span>
+            </button>
           </div>
         </header>
 
         {/* Premium Greeting Banner */}
-        {/* Premium Greeting Banner */}
-<div className="welcome-banner">
-  <div className="welcome-text">
-    <h1>Hi, {userName}</h1>
-    <p>Ready to start your day with some task boards?</p>
-  </div>
-  {/* Replacing old emoji with a beautiful glowing micro-dashboard element */}
-  <div className="banner-illustration-modern">
-    <div className="abstract-glow"></div>
-    <div className="floating-icon-card">
-      <User size={36} color="#FFFFFF" />
-    </div>
-  </div>
-</div>
+        <div className="welcome-banner">
+          <div className="welcome-text">
+            <h1>Hi, {userName || "Admin"}</h1>
+            <p>Ready to start your day with some task boards?</p>
+          </div>
+          <div className="banner-illustration-modern">
+            <div className="abstract-glow"></div>
+            <div className="floating-icon-card">
+              <User size={36} color="#FFFFFF" />
+            </div>
+          </div>
+        </div>
 
-        <div className="section-label">Overview</div>
+        <div className="section-label d-flex justify-content-between align-items-center">
+          <span>Overview</span>
+          
+          {/* Premium Workspace File Action Controllers */}
+          <div className="d-flex gap-2">
+            <button className="filter-pill-btn" onClick={exportTasksToJSON} style={{fontSize: '12px', padding: '6px 12px'}}>
+              Export Workspace (.json)
+            </button>
+            <label className="filter-pill-btn" style={{ cursor: 'pointer', fontSize: '12px', padding: '6px 12px', marginBottom: 0 }}>
+              Import Data Matrix
+              <input type="file" accept=".json" onChange={handleImportJSON} style={{ display: 'none' }} />
+            </label>
+          </div>
+        </div>
 
         {/* Dynamic Metric Grid */}
         <div className="metrics-grid">
@@ -284,81 +380,93 @@ function Dashboard() {
             <tbody>
               {tasks
                 .filter((task) => {
-                  const matchesSearch = task.title.toLowerCase().includes(search.toLowerCase());
-                  const matchesFilter = filter === "All" ? true : task.status === filter;
+                  const taskTitle = task.title || task.Title || "";
+                  const taskStatus = task.status || task.Status || "Pending";
+                  const matchesSearch = taskTitle.toLowerCase().includes(search.toLowerCase());
+                  const matchesFilter = filter === "All" ? true : taskStatus === filter;
                   return matchesSearch && matchesFilter;
                 })
-                .map((task) => (
-                  <tr key={task.id}>
-                    <td>
-                      <div className="table-task-meta">
-                        <span className="table-task-icon">
-                          <Pin size={18} color="#3B82F6" />
-                        </span>
-                        <div>
-                          <div className="table-task-title">{task.title}</div>
-                          <div className="table-task-desc">{task.description}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="premium-category-tag">{task.category || "General"}</span>
-                    </td>
-                    <td className="table-date-txt">
-                      <div className="d-flex-align">
-                        <Calendar size={15} className="me-1.5" color="#64748B" />
-                        {task.dueDate ? task.dueDate.split("T")[0] : "No Date"}
-                      </div>
-                    </td>
-                    {role === "Admin" && (
-                      <td className="table-user-txt">
-                        <div className="d-flex-align">
-                          <User size={15} className="me-1.5" color="#64748B" />
-                          {task.user?.name || "Unknown"}
-                        </div>
-                      </td>
-                    )}
-                    {role === "Admin" && (
+                .map((task) => {
+                  const currentId = task.id || task.Id;
+                  const currentStatus = task.status || task.Status;
+                  return (
+                    <tr key={currentId}>
                       <td>
-                        <select
-                          className="premium-table-select"
-                          value={task.assignedToUser?.id || ""}
-                          onChange={(e) => assignTask(task.id, e.target.value)}
-                        >
-                          <option value="">Unassigned</option>
-                          {users.map((user) => (
-                            <option key={user.id} value={user.id}>
-                              {user.name}
-                            </option>
-                          ))}
-                        </select>
+                        <div className="table-task-meta">
+                          <span className="table-task-icon">
+                            <Pin size={18} color="#3B82F6" />
+                          </span>
+                          <div>
+                            <div className="table-task-title">{task.title || task.Title}</div>
+                            <div className="table-task-desc">{task.description || task.Description}</div>
+                          </div>
+                        </div>
                       </td>
-                    )}
-                    <td>
-                      <span className={`status-badge ${getStatusBadgeClass(task.status)}`}>
-                        {task.status}
-                      </span>
-                    </td>
-                    <td>
-                      <div className="table-actions-cell">
-                        <button
-                          className="premium-action-icon-btn edit-btn"
-                          data-bs-toggle="modal"
-                          data-bs-target="#editModal"
-                          onClick={() => setSelectedTask(task)}
-                        >
-                          <Edit2 size={15} />
-                        </button>
-                        <button
-                          className="premium-action-icon-btn delete-btn"
-                          onClick={() => deleteTask(task.id)}
-                        >
-                          <Trash2 size={15} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                      <td>
+                        <span className="premium-category-tag">{task.category || task.Category || "General"}</span>
+                      </td>
+                      <td className="table-date-txt">
+                        <div className="d-flex-align">
+                          <Calendar size={15} className="me-1.5" color="#64748B" />
+                          {task.dueDate ? task.dueDate.split("T")[0] : (task.DueDate ? task.DueDate.split("T")[0] : "No Date")}
+                        </div>
+                      </td>
+                      {role === "Admin" && (
+                        <td className="table-user-txt">
+                          <div className="d-flex-align">
+                            <User size={15} className="me-1.5" color="#64748B" />
+                            {task.user?.name || task.User?.Name || "Unknown"}
+                          </div>
+                        </td>
+                      )}
+                      {role === "Admin" && (
+                        <td>
+                          <select
+                            className="premium-table-select"
+                            value={task.assignedToUser?.id || task.AssignedToUser?.Id || ""}
+                            onChange={(e) => assignTask(currentId, e.target.value)}
+                          >
+                            <option value="">Unassigned</option>
+                            {users.map((user) => (
+                              <option key={user.id || user.Id} value={user.id || user.Id}>
+                                {user.name || user.Name}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      )}
+                      <td>
+                        <span className={`status-badge ${getStatusBadgeClass(currentStatus)}`}>
+                          {currentStatus}
+                        </span>
+                      </td>
+                      <td>
+                        <div className="table-actions-cell">
+                          <button
+                            className="premium-action-icon-btn edit-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editModal"
+                            onClick={() => setSelectedTask(task)}
+                          >
+                            <Edit2 size={15} />
+                          </button>
+                          <button
+                            className="premium-action-icon-btn delete-btn"
+                            onClick={() => {
+                              if (currentId) {
+                                deleteTask(currentId);
+                              } else {
+                                toast.error("Task structural ID missing");
+                              }
+                            }}
+                          >
+                            <Trash2 size={15} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         </div>
@@ -462,20 +570,22 @@ function EditTaskModal({ task, refreshTasks }) {
 
   useEffect(() => {
     if (task) {
-      setTitle(task.title);
-      setDescription(task.description);
-      setStatus(task.status);
-      setPriority(task.priority);
-      setCategory(task.category);
-      setDueDate(task.dueDate ? task.dueDate.split("T")[0] : "");
+      setTitle(task.title || task.Title || "");
+      setDescription(task.description || task.Description || "");
+      setStatus(task.status || task.Status || "Pending");
+      setPriority(task.priority || task.Priority || "Medium");
+      setCategory(task.category || task.Category || "General");
+      const baseDate = task.dueDate || task.DueDate;
+      setDueDate(baseDate ? baseDate.split("T")[0] : "");
     }
   }, [task]);
 
   const updateTask = async () => {
     try {
+      const currentId = task.id || task.Id;
       const token = localStorage.getItem("token");
       await axios.put(
-        `https://localhost:7039/api/Tasks/${task.id}`,
+        `https://localhost:7039/api/Tasks/${currentId}`,
         { ...task, title, description, status, priority, category, dueDate },
         { headers: { Authorization: `Bearer ${token}` } }
       );
